@@ -84,7 +84,7 @@ const getActivitiesHub = async (region) => {
     return await requestGet(`${baseUrl}/module/${year}/B-INN-000/${region}-0-1/?format=json`);
 };
 
-const getRunExperiences = async (activities, login) => {
+const getRunExperiences = async (activities, url, login) => {
     try {
         let res = await Promise.all(
             activities.map((act) => {
@@ -115,7 +115,7 @@ const getAllExperiences = async (activities, region, login) => {
     const regionSub = region?.split('/')[1];
     const url = `${baseUrl}/module/${year}/B-INN-000/${regionSub}-0-1`;
     if (regionSub === 'RUN')
-        return await getRunExperiences(activities, login)
+        return await getRunExperiences(activities, url, login)
     try {
         let res = await Promise.all(
             activities.map((act) => {
