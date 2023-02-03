@@ -233,8 +233,6 @@ const getXp = async () => {
         login,
     );
     countXpSoon();
-    console.log(xpAct)
-    console.log(me)
     me.present.forEach(element => {
         if (element.type === 'Experience')
             participation.experience++;
@@ -260,6 +258,7 @@ const getXp = async () => {
         <br> Workshop: ${participation.workshop} (+${participation.workshopsoon}) / ${xpAct.get(Activities.WORKSHOP).limitPart} - Orga: ${organization.workshop} (+${organization.workshopsoon}) / ${xpAct.get(Activities.WORKSHOP).limitOrg}
         <br> Hackathon: ${participation.hackathon} (+${participation.hackathonsoon}) - Orga: ${organization.hackathon} (+${organization.hackathonsoon})
     `;
+    console.log(me)
 };
 
 const insertAfter = (newNode, referenceNode) => {
