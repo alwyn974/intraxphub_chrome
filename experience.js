@@ -255,16 +255,11 @@ const getXp = async () => {
     });
     value.innerHTML = `
         Validated : ${me.nbXps} / In progress : ${me.nbXpsSoon} 
-        <label> Participations: </label>
-                 Experimentation: ${participation.experience} / ${xpAct.get(Activities.EXPERIENCE).limitPart}
-            <br> Talk: ${participation.talk} (+${participation.talksoon}) / ${xpAct.get(Activities.TALK).limitPart}
-            <br> Workshop: ${participation.workshop} (+${participation.workshopsoon}) / ${xpAct.get(Activities.WORKSHOP).limitPart}
-            <br> Hackathon: ${participation.hackathon} (+${participation.hackathonsoon})
-        <label> Organizations: </label>
-                 Talk: ${organization.talk} (+${organization.talksoon}) / ${xpAct.get(Activities.TALK).limitOrg}
-            <br> Workshop: ${organization.workshop} (+${organization.workshopsoon}) / ${xpAct.get(Activities.WORKSHOP).limitOrg}
-            <br> Hackathon: ${organization.hackathon} (+${organization.hackathonsoon})
-       `;
+        <br> Experimentation: ${participation.experience} / ${xpAct.get(Activities.EXPERIENCE).limitPart}
+        <br> Talk: ${participation.talk} (+${participation.talksoon}) / ${xpAct.get(Activities.TALK).limitPart} - Orga: ${organization.talk} (+${organization.talksoon}) / ${xpAct.get(Activities.TALK).limitOrg}
+        <br> Workshop: ${participation.workshop} (+${participation.workshopsoon}) / ${xpAct.get(Activities.WORKSHOP).limitPart} - Orga: ${organization.workshop} (+${organization.workshopsoon}) / ${xpAct.get(Activities.WORKSHOP).limitOrg}
+        <br> Hackathon: ${participation.hackathon} (+${participation.hackathonsoon}) - Orga: ${organization.hackathon} (+${organization.hackathonsoon})
+    `;
 };
 
 const insertAfter = (newNode, referenceNode) => {
